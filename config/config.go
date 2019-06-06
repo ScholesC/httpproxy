@@ -23,7 +23,7 @@ func init() {
 	log.SetLevel(log.DebugLevel)
 	log.SetFormatter(&log.TextFormatter{FullTimestamp: true})
 
-	usr, err := user.Current()
+	usr, err := os.Getenv("HOME")
 	if err != nil {
 		panic(err)
 	}
